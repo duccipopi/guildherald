@@ -1,0 +1,32 @@
+{
+  "lastModified": 1515718096000,
+  "name": "Thugal",
+  "realm": "Scilla",
+  "battlegroup": "Shadowburn",
+  "class": 1,
+  "race": 6,
+  "gender": 0,
+  "level": 110,
+  "achievementPoints": 15995,
+  "thumbnail": "scilla/58/103448122-avatar.jpg",
+  "calcClass": "Z",
+  "faction": 1,
+  "guild": {
+    "name": "Get along Gang",
+    "realm": "Scilla",
+    "battlegroup": "Shadowburn",
+    "members": 58,
+    "achievementPoints": 1080,
+    "emblem": {
+      "icon": 92,
+      "iconColor": "ffb1b8b1",
+      "iconColorId": 14,
+      "border": 0,
+      "borderColor": "ffffffff",
+      "borderColorId": 14,
+      "backgroundColor": "ff232323",
+      "backgroundColorId": 45
+    }
+  },
+  "totalHonorableKills": 10954
+}

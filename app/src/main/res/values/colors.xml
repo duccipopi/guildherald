@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="hordeColor">#d50000</color>
+    <color name="hordeLightColor">#ff5131</color>
+    <color name="hordeDarkColor">#9b0000</color>
+    <color name="hordeAccentColor">#111111</color>
+
+    <color name="allianceColor">#2962ff</color>
+    <color name="allianceLightColor">#768fff</color>
+    <color name="allianceDarkColor">#0039cb</color>
+    <color name="allianceAccentColor">#ffab00</color>
+
+    <color name="textColor">#ffffff</color>
+</resources>

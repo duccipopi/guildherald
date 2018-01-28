@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Guild Herald</string>
+    <string name="characters">Characters</string>
+    <string name="guilds">Guilds</string>
+</resources>

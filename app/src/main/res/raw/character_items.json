@@ -1,0 +1,671 @@
+{
+  "lastModified": 1515718096000,
+  "name": "Thugal",
+  "realm": "Scilla",
+  "battlegroup": "Shadowburn",
+  "class": 1,
+  "race": 6,
+  "gender": 0,
+  "level": 110,
+  "achievementPoints": 15995,
+  "thumbnail": "scilla/58/103448122-avatar.jpg",
+  "calcClass": "Z",
+  "faction": 1,
+  "items": {
+    "averageItemLevel": 931,
+    "averageItemLevelEquipped": 931,
+    "head": {
+      "id": 152376,
+      "name": "Crown of Burning Resolve",
+      "icon": "inv_helm_plate_raidpaladin_s_01",
+      "quality": 4,
+      "itemLevel": 930,
+      "tooltipParams": {
+        "transmogItem": 118940,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 40,
+        "amount": 559
+      }, {
+        "stat": 74,
+        "amount": 1495
+      }, {
+        "stat": 36,
+        "amount": 864
+      }, {
+        "stat": 7,
+        "amount": 2242
+      }],
+      "armor": 662,
+      "context": "raid-normal",
+      "bonusLists": [3614, 1472, 3528],
+      "displayInfoId": 162289,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 118940,
+        "itemAppearanceModId": 0,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "neck": {
+      "id": 137458,
+      "name": "Chaos-Forged Necklace",
+      "icon": "inv_7_0raid_necklace_01c",
+      "quality": 4,
+      "itemLevel": 910,
+      "tooltipParams": {
+        "gem0": 151584,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 40,
+        "amount": 1425
+      }, {
+        "stat": 49,
+        "amount": 1693
+      }, {
+        "stat": 7,
+        "amount": 2010
+      }],
+      "armor": 0,
+      "context": "world-quest-10",
+      "bonusLists": [3573, 1808, 1562, 3528],
+      "displayInfoId": 0,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {}
+    },
+    "shoulder": {
+      "id": 134517,
+      "name": "Tremorguard Pauldrons",
+      "icon": "inv_shoulder_plate_legiondungeon_c_01",
+      "quality": 4,
+      "itemLevel": 920,
+      "tooltipParams": {
+        "enchant": 5900,
+        "transmogItem": 71413,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 524
+      }, {
+        "stat": 49,
+        "amount": 810
+      }, {
+        "stat": 74,
+        "amount": 1961
+      }, {
+        "stat": 7,
+        "amount": 2941
+      }],
+      "armor": 598,
+      "context": "world-quest-10",
+      "bonusLists": [3573, 1572, 3336],
+      "displayInfoId": 145046,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 71413,
+        "enchantDisplayInfoId": 5900,
+        "itemAppearanceModId": 0,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "back": {
+      "id": 144468,
+      "name": "Felpruner's Shroud",
+      "icon": "inv_cape_plate_raiddeathknight_r_01",
+      "quality": 4,
+      "itemLevel": 915,
+      "tooltipParams": {
+        "transmogItem": 87352,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 365
+      }, {
+        "stat": 49,
+        "amount": 618
+      }, {
+        "stat": 71,
+        "amount": 1404
+      }, {
+        "stat": 7,
+        "amount": 2106
+      }, {
+        "stat": 63,
+        "amount": 421
+      }],
+      "armor": 164,
+      "context": "world-quest-10",
+      "bonusLists": [3573, 40, 1567, 3336],
+      "displayInfoId": 160386,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 87352,
+        "itemAppearanceModId": 0,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "chest": {
+      "id": 152378,
+      "name": "Breastplate of Terminal End",
+      "icon": "inv_chest_plate_raiddeathknight_s_01",
+      "quality": 4,
+      "itemLevel": 940,
+      "tooltipParams": {
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 685
+      }, {
+        "stat": 40,
+        "amount": 1234
+      }, {
+        "stat": 74,
+        "amount": 3150
+      }, {
+        "stat": 7,
+        "amount": 4726
+      }],
+      "armor": 833,
+      "context": "raid-normal",
+      "bonusLists": [3614, 1482, 3336],
+      "displayInfoId": 167426,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemAppearanceModId": 0
+      }
+    },
+    "shirt": {
+      "id": 98082,
+      "name": "Undisputed Champion's Shirt",
+      "icon": "inv_shirt_black_01",
+      "quality": 3,
+      "itemLevel": 1,
+      "tooltipParams": {
+        "timewalkerLevel": 110
+      },
+      "stats": [],
+      "armor": 0,
+      "context": "",
+      "bonusLists": [],
+      "displayInfoId": 146834,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemAppearanceModId": 0
+      }
+    },
+    "tabard": {
+      "id": 52252,
+      "name": "Tabard of the Lightbringer",
+      "icon": "inv_shirt_guildtabard_01",
+      "quality": 4,
+      "itemLevel": 80,
+      "tooltipParams": {
+        "transmogItem": 142504,
+        "timewalkerLevel": 110
+      },
+      "stats": [],
+      "armor": 0,
+      "context": "quest-reward",
+      "bonusLists": [],
+      "displayInfoId": 65733,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 142504,
+        "itemAppearanceModId": 0,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "wrist": {
+      "id": 152381,
+      "name": "Tainted Corruptor's Vambraces",
+      "icon": "inv_plate_raidwarrior_s_01bracer",
+      "quality": 4,
+      "itemLevel": 930,
+      "tooltipParams": {
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 40,
+        "amount": 475
+      }, {
+        "stat": 49,
+        "amount": 326
+      }, {
+        "stat": 74,
+        "amount": 841
+      }, {
+        "stat": 7,
+        "amount": 1261
+      }],
+      "armor": 356,
+      "context": "raid-normal",
+      "bonusLists": [3614, 1472, 3528],
+      "displayInfoId": 162189,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemAppearanceModId": 0
+      }
+    },
+    "hands": {
+      "id": 137060,
+      "name": "Archavon's Heavy Hand",
+      "icon": "inv_gloves_plate_raidwarrior_m_01",
+      "quality": 5,
+      "itemLevel": 970,
+      "tooltipParams": {
+        "enchant": 5445,
+        "transmogItem": 71426,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 690
+      }, {
+        "stat": 74,
+        "amount": 3124
+      }, {
+        "stat": 36,
+        "amount": 920
+      }, {
+        "stat": 7,
+        "amount": 4687
+      }],
+      "armor": 556,
+      "context": "",
+      "bonusLists": [3529, 3459, 3570],
+      "displayInfoId": 119967,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 71426,
+        "enchantDisplayInfoId": 5445,
+        "itemAppearanceModId": 0,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "waist": {
+      "id": 152380,
+      "name": "Waistguard of Fel Magics",
+      "icon": "inv_plate_raidwarrior_s_01buckle",
+      "quality": 4,
+      "itemLevel": 940,
+      "tooltipParams": {
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 884
+      }, {
+        "stat": 49,
+        "amount": 555
+      }, {
+        "stat": 74,
+        "amount": 2362
+      }, {
+        "stat": 7,
+        "amount": 3544
+      }],
+      "armor": 468,
+      "context": "raid-normal",
+      "bonusLists": [3614, 1482, 3336],
+      "displayInfoId": 165000,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemAppearanceModId": 0
+      }
+    },
+    "legs": {
+      "id": 134506,
+      "name": "Legplates of the Swarm",
+      "icon": "inv_pant_plate_legiondungeon_c_01",
+      "quality": 4,
+      "itemLevel": 910,
+      "tooltipParams": {
+        "transmogItem": 71444,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 49,
+        "amount": 1041
+      }, {
+        "stat": 74,
+        "amount": 2382
+      }, {
+        "stat": 36,
+        "amount": 673
+      }, {
+        "stat": 7,
+        "amount": 3573
+      }],
+      "armor": 682,
+      "context": "world-quest-10",
+      "bonusLists": [3573, 1562, 3528],
+      "displayInfoId": 145045,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 71444,
+        "itemAppearanceModId": 0,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "feet": {
+      "id": 147059,
+      "name": "Iron Ballast Sabatons",
+      "icon": "inv_boot_plate_raidwarrior_r_01",
+      "quality": 4,
+      "itemLevel": 910,
+      "tooltipParams": {
+        "transmogItem": 113806,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 49,
+        "amount": 836
+      }, {
+        "stat": 74,
+        "amount": 1786
+      }, {
+        "stat": 36,
+        "amount": 450
+      }, {
+        "stat": 7,
+        "amount": 2680
+      }],
+      "armor": 536,
+      "context": "raid-finder",
+      "bonusLists": [3564, 1492, 3337],
+      "displayInfoId": 158758,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "itemId": 113806,
+        "itemAppearanceModId": 4,
+        "transmogItemAppearanceModId": 0
+      }
+    },
+    "finger1": {
+      "id": 137052,
+      "name": "Ayala's Stone Heart",
+      "icon": "inv_misc_ring_firelands_1",
+      "quality": 5,
+      "itemLevel": 970,
+      "tooltipParams": {
+        "gem0": 130222,
+        "enchant": 5423,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 2563
+      }, {
+        "stat": 49,
+        "amount": 1922
+      }, {
+        "stat": 7,
+        "amount": 3515
+      }],
+      "armor": 0,
+      "context": "",
+      "bonusLists": [3459, 3570],
+      "displayInfoId": 0,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "enchantDisplayInfoId": 5423,
+        "itemAppearanceModId": 0
+      }
+    },
+    "finger2": {
+      "id": 149669,
+      "name": "Fierce Combatant's Signet",
+      "icon": "inv_70_pvp_ring3d",
+      "quality": 4,
+      "itemLevel": 910,
+      "tooltipParams": {
+        "enchant": 5429,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 40,
+        "amount": 1870
+      }, {
+        "stat": 49,
+        "amount": 1247
+      }, {
+        "stat": 7,
+        "amount": 2010
+      }],
+      "armor": 0,
+      "context": "world-quest-10",
+      "bonusLists": [3573, 1572, 3528],
+      "displayInfoId": 0,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {
+        "enchantDisplayInfoId": 5429
+      }
+    },
+    "trinket1": {
+      "id": 147009,
+      "name": "Infernal Cinders",
+      "icon": "spell_fire_burnoutgreen",
+      "quality": 4,
+      "itemLevel": 925,
+      "tooltipParams": {
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 1296
+      }],
+      "armor": 0,
+      "context": "raid-heroic",
+      "bonusLists": [3562, 1507, 3336],
+      "displayInfoId": 0,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {}
+    },
+    "trinket2": {
+      "id": 134234,
+      "name": "Barnacled Azsharan Insignia",
+      "icon": "ability_druid_empoweredrejuvination",
+      "quality": 4,
+      "itemLevel": 915,
+      "tooltipParams": {
+        "gem0": 151584,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 4,
+        "amount": 2372
+      }, {
+        "stat": 36,
+        "amount": 1248
+      }],
+      "armor": 0,
+      "context": "world-quest-10",
+      "bonusLists": [3573, 1808, 604, 1577, 3336],
+      "displayInfoId": 0,
+      "artifactId": 0,
+      "artifactAppearanceId": 0,
+      "artifactTraits": [],
+      "relics": [],
+      "appearance": {}
+    },
+    "mainHand": {
+      "id": 128910,
+      "name": "Strom'kar, the Warbreaker",
+      "icon": "inv_sword_2h_artifactarathor_d_02",
+      "quality": 6,
+      "itemLevel": 952,
+      "tooltipParams": {
+        "gem0": 151011,
+        "gem1": 147081,
+        "gem2": 137347,
+        "timewalkerLevel": 110
+      },
+      "stats": [{
+        "stat": 32,
+        "amount": 965
+      }, {
+        "stat": 49,
+        "amount": 926
+      }, {
+        "stat": 4,
+        "amount": 3063
+      }, {
+        "stat": 7,
+        "amount": 4595
+      }],
+      "armor": 0,
+      "weaponInfo": {
+        "damage": {
+          "min": 16274,
+          "max": 27126,
+          "exactMin": 16274.0,
+          "exactMax": 27125.0
+        },
+        "weaponSpeed": 3.6,
+        "dps": 6027.639
+      },
+      "context": "scenario-normal",
+      "bonusLists": [750, 1533, 1536, 1534],
+      "displayInfoId": 152893,
+      "artifactId": 36,
+      "artifactAppearanceId": 797,
+      "artifactTraits": [{
+        "id": 1356,
+        "rank": 1
+      }, {
+        "id": 1145,
+        "rank": 4
+      }, {
+        "id": 1142,
+        "rank": 1
+      }, {
+        "id": 1150,
+        "rank": 4
+      }, {
+        "id": 1137,
+        "rank": 1
+      }, {
+        "id": 1148,
+        "rank": 4
+      }, {
+        "id": 1149,
+        "rank": 4
+      }, {
+        "id": 1139,
+        "rank": 1
+      }, {
+        "id": 1146,
+        "rank": 4
+      }, {
+        "id": 1141,
+        "rank": 1
+      }, {
+        "id": 1147,
+        "rank": 5
+      }, {
+        "id": 1144,
+        "rank": 4
+      }, {
+        "id": 1143,
+        "rank": 5
+      }, {
+        "id": 1138,
+        "rank": 1
+      }, {
+        "id": 1151,
+        "rank": 4
+      }, {
+        "id": 1140,
+        "rank": 1
+      }, {
+        "id": 1393,
+        "rank": 1
+      }, {
+        "id": 1714,
+        "rank": 1
+      }, {
+        "id": 1613,
+        "rank": 5
+      }, {
+        "id": 1614,
+        "rank": 1
+      }, {
+        "id": 1615,
+        "rank": 1
+      }, {
+        "id": 1616,
+        "rank": 16
+      }],
+      "relics": [{
+        "socket": 0,
+        "itemId": 151011,
+        "context": 29,
+        "bonusLists": [3396, 3189, 3337]
+      }, {
+        "socket": 1,
+        "itemId": 147081,
+        "context": 5,
+        "bonusLists": [3562, 1502, 3336]
+      }, {
+        "socket": 2,
+        "itemId": 137347,
+        "context": 16,
+        "bonusLists": [3418, 1567, 3528]
+      }],
+      "appearance": {
+        "itemAppearanceModId": 16
+      }
+    }
+  },
+  "totalHonorableKills": 10954
+}

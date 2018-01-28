@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="HordeTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/hordeColor</item>
+        <item name="colorPrimaryDark">@color/hordeDarkColor</item>
+        <item name="colorAccent">@color/hordeAccentColor</item>
+    </style>
+
+    <style name="AllianceTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/allianceColor</item>
+        <item name="colorPrimaryDark">@color/allianceDarkColor</item>
+        <item name="colorAccent">@color/allianceAccentColor</item>
+    </style>
+
+</resources>
