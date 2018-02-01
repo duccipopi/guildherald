@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.model.local;
+package com.duccipopi.guildherald.model.local.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

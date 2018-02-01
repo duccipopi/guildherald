@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/layout_inner_margin">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/portrait"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/default_portrait"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/char_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/portrait"
+            app:layout_constraintTop_toTopOf="@+id/portrait"
+            tool:text="CharacterName" />
+
+        <TextView
+            android:id="@+id/realm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/portrait"
+            app:layout_constraintTop_toBottomOf="@+id/char_name"
+            tool:text="Realm Name" />
+
+        <TextView
+            android:id="@+id/race"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/portrait"
+            app:layout_constraintTop_toBottomOf="@+id/realm"
+            tool:text="Race" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/race"
+            app:layout_constraintTop_toTopOf="@+id/race"
+            tool:text="Gender" />
+
+        <TextView
+            android:id="@+id/char_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/gender"
+            app:layout_constraintTop_toTopOf="@+id/gender"
+            tool:text="Class" />
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/char_class"
+            app:layout_constraintTop_toTopOf="@+id/char_class"
+            tool:text="Level" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/emblem"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/default_portrait"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/guild_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Text.Title"
+            app:layout_constraintLeft_toRightOf="@+id/emblem"
+            app:layout_constraintTop_toTopOf="@+id/emblem"
+            tool:text="Guild Name" />
+
+        <TextView
+            android:id="@+id/realm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Text.Subtitle"
+            app:layout_constraintLeft_toRightOf="@+id/emblem"
+            app:layout_constraintTop_toBottomOf="@+id/guild_name"
+            tool:text="Realm Name" />
+
+        <TextView
+            android:id="@+id/race"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Text.Caption"
+            app:layout_constraintLeft_toRightOf="@+id/emblem"
+            app:layout_constraintTop_toBottomOf="@+id/realm"
+            tool:text="# member(s)" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

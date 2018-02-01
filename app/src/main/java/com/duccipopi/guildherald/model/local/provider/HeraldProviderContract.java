@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.model.local;
+package com.duccipopi.guildherald.model.local.provider;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
@@ -6,6 +6,8 @@ import android.provider.BaseColumns;
 /**
  * Created by ducci on 28/01/2018.
  */
+
+// TODO: Include database for favorite characters
 
 public interface HeraldProviderContract {
 
@@ -80,6 +82,7 @@ public interface HeraldProviderContract {
         public static final String[] COLUMNS = {
                 COLUMN_NAME,
                 COLUMN_REALM,
+                COLUMN_MEMBERS,
                 COLUMN_FACTION,
                 COLUMN_ACHIEVEMENTS,
                 COLUMN_EMBLEM
