@@ -8,6 +8,7 @@ import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewStub;
 
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.dummy.Dummy;
@@ -23,12 +24,13 @@ import java.util.List;
  */
 
 public class CharacterListFragment extends Fragment {
+
+    List<Character> items = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
-
-        List<Character> items = new ArrayList<>();
 
         // TODO: Use Loader and real values from DAO
         for (Pair<String, String> pair : Dummy.getCharList()) {
@@ -38,8 +40,8 @@ public class CharacterListFragment extends Fragment {
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setAdapter(
                 new GenericRecyclerViewAdapter<>(items,
-                        new CharacterViewHolder(
-                                getLayoutInflater().inflate(R.layout.item_character, null))));
+                        new CharacterViewHolder(new View(getContext())),
+                        R.layout.item_character));
 
         return rootView;
     }
