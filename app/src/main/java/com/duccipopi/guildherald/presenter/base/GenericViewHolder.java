@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.presenter;
+package com.duccipopi.guildherald.presenter.base;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

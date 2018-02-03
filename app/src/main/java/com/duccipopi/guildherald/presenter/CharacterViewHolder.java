@@ -6,6 +6,9 @@ import android.widget.TextView;
 
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.model.dao.Character;
+import com.duccipopi.guildherald.presenter.base.GenericViewHolder;
+import com.duccipopi.guildherald.presenter.base.GenericViewHolderFactory;
+import com.duccipopi.guildherald.util.Utilities;
 
 /**
  * Created by ducci on 01/02/2018.
@@ -28,6 +31,7 @@ public class CharacterViewHolder extends GenericViewHolder<Character>
 
     @Override
     public void bind(Character item) {
+        portrait = itemView.findViewById(R.id.portrait);
         charName = itemView.findViewById(R.id.char_name);
         realm = itemView.findViewById(R.id.realm);
         race = itemView.findViewById(R.id.race);
@@ -36,12 +40,14 @@ public class CharacterViewHolder extends GenericViewHolder<Character>
         level = itemView.findViewById(R.id.level);
 
 
-        // portrait = use Image lib to load portrait
+        Utilities.Image.loadImage(itemView.getContext(),
+                Utilities.Blizzard.getThumbnailFullURL(item.getThumbnail()),
+                R.drawable.default_portrait, R.drawable.error_portrait, portrait);
         charName.setText(item.getName());
         realm.setText(item.getRealm());
-        race.setText(Integer.toString(item.getRace()));
-        gender.setText(Integer.toString(item.getGender()));
-        charClass.setText(Integer.toString(item.getcClass()));
+        race.setText(Utilities.Blizzard.getRaceResId(item.getRace()));
+        gender.setText(Utilities.Blizzard.getGenderResId(item.getGender()));
+        charClass.setText(Utilities.Blizzard.getClassResId(item.getCClass()));
         level.setText(Integer.toString(item.getLevel()));
 
     }

@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.presenter;
+package com.duccipopi.guildherald.presenter.base;
 
 import android.view.View;
 

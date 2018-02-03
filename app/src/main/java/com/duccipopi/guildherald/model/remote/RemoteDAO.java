@@ -10,6 +10,8 @@ import com.duccipopi.guildherald.model.remote.blizzard.BlizzardAPIService;
 
 import java.util.Map;
 
+import okhttp3.Cache;
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -1,5 +1,7 @@
 package com.duccipopi.guildherald.model.dao;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by ducci on 28/01/2018.
  */
@@ -8,7 +10,7 @@ public class Character {
 
     private String name;
     private String realm;
-    private int cClass;
+    @SerializedName("class") private int cClass;
     private int race;
     private int gender;
     private int level;
@@ -43,7 +45,7 @@ public class Character {
         return realm;
     }
 
-    public int getcClass() {
+    public int getCClass() {
         return cClass;
     }
 

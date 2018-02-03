@@ -4,45 +4,63 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="@dimen/layout_inner_margin">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_inner_margin">
 
         <ImageView
             android:id="@+id/emblem"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/default_portrait"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/default_emblem"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/guild_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.Text.Title"
-            app:layout_constraintLeft_toRightOf="@+id/emblem"
-            app:layout_constraintTop_toTopOf="@+id/emblem"
+            android:textAppearance="@style/AppTheme.Text.Title"
+            app:layout_constraintBottom_toTopOf="@id/realm"
+            app:layout_constraintLeft_toRightOf="@id/emblem"
+            app:layout_constraintTop_toTopOf="parent"
             tool:text="Guild Name" />
 
         <TextView
             android:id="@+id/realm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.Text.Subtitle"
-            app:layout_constraintLeft_toRightOf="@+id/emblem"
-            app:layout_constraintTop_toBottomOf="@+id/guild_name"
+            android:textAppearance="@style/AppTheme.Text.Subtitle"
+            app:layout_constraintBottom_toTopOf="@id/members"
+            app:layout_constraintLeft_toRightOf="@id/emblem"
+            app:layout_constraintTop_toBottomOf="@id/guild_name"
             tool:text="Realm Name" />
 
         <TextView
-            android:id="@+id/race"
+            android:id="@+id/members"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.Text.Caption"
-            app:layout_constraintLeft_toRightOf="@+id/emblem"
-            app:layout_constraintTop_toBottomOf="@+id/realm"
-            tool:text="# member(s)" />
+            android:paddingEnd="@dimen/padding_between_text"
+            android:textAppearance="@style/AppTheme.Text.Caption"
+            app:layout_constraintBottom_toBottomOf="@id/emblem"
+            app:layout_constraintLeft_toRightOf="@id/emblem"
+            app:layout_constraintTop_toBottomOf="@id/realm"
+            tool:text="##" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_member_s"
+            android:textAppearance="@style/AppTheme.Text.Caption"
+            app:layout_constraintLeft_toRightOf="@id/members"
+            app:layout_constraintTop_toBottomOf="@id/realm"
+            tool:text="member(s)" />
 
 
     </android.support.constraint.ConstraintLayout>

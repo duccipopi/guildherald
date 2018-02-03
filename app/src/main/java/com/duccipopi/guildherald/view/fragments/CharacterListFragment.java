@@ -2,19 +2,21 @@ package com.duccipopi.guildherald.view.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewStub;
 
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.dummy.Dummy;
+import com.duccipopi.guildherald.model.HeraldDAO;
 import com.duccipopi.guildherald.model.dao.Character;
+import com.duccipopi.guildherald.model.implementation.HeraldCallback;
 import com.duccipopi.guildherald.presenter.CharacterViewHolder;
-import com.duccipopi.guildherald.presenter.GenericRecyclerViewAdapter;
+import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,14 @@ import java.util.List;
 public class CharacterListFragment extends Fragment {
 
     List<Character> items = new ArrayList<>();
+    RecyclerView recyclerView;
+    HeraldDAO api;
+
+
+    public CharacterListFragment() {
+        super();
+        api = new HeraldDAO(getContext());
+    }
 
     @Nullable
     @Override
@@ -34,15 +44,32 @@ public class CharacterListFragment extends Fragment {
 
         // TODO: Use Loader and real values from DAO
         for (Pair<String, String> pair : Dummy.getCharList()) {
-            items.add(new Character(pair.first, pair.second, 0, 0, 0, 0, 0, 0, 0, null));
+            api.getCharacterBaseInfo(pair.second, pair.first, callback);
         }
 
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+        recyclerView = rootView.findViewById(R.id.recyclerView);
+        setupRecycler(items);
+
+        return rootView;
+    }
+
+    private void setupRecycler(List<Character> items) {
         recyclerView.setAdapter(
                 new GenericRecyclerViewAdapter<>(items,
                         new CharacterViewHolder(new View(getContext())),
                         R.layout.item_character));
-
-        return rootView;
     }
+
+    HeraldCallback<Character> callback = new HeraldCallback<Character>() {
+        @Override
+        public void onResponse(Character character) {
+            items.add(character);
+            recyclerView.getAdapter().notifyDataSetChanged();
+        }
+
+        @Override
+        public void onFailure(Character character) {
+            Snackbar.make(getView(), "Error loading character", Snackbar.LENGTH_LONG);
+        }
+    };
 }

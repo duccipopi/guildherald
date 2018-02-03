@@ -8,46 +8,58 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_inner_margin">
 
         <ImageView
             android:id="@+id/portrait"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingEnd="@dimen/layout_inner_margin"
+            android:scaleType="fitCenter"
             android:src="@drawable/default_portrait"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/char_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@+id/portrait"
-            app:layout_constraintTop_toTopOf="@+id/portrait"
+            android:textAppearance="@style/AppTheme.Text.Title"
             app:layout_constraintBottom_toTopOf="@+id/realm"
+            app:layout_constraintLeft_toRightOf="@+id/portrait"
+            app:layout_constraintTop_toTopOf="parent"
             tool:text="CharacterName" />
 
         <TextView
             android:id="@+id/realm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/AppTheme.Text.Subtitle"
+            app:layout_constraintBottom_toTopOf="@+id/race"
             app:layout_constraintLeft_toRightOf="@+id/portrait"
             app:layout_constraintTop_toBottomOf="@+id/char_name"
-            app:layout_constraintBottom_toTopOf="@+id/race"
             tool:text="Realm Name" />
 
         <TextView
             android:id="@+id/race"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/padding_between_text"
+            android:textAppearance="@style/AppTheme.Text.Caption"
+            app:layout_constraintBottom_toBottomOf="@+id/portrait"
             app:layout_constraintLeft_toRightOf="@+id/portrait"
             app:layout_constraintTop_toBottomOf="@+id/realm"
-            app:layout_constraintBottom_toBottomOf="@+id/portrait"
             tool:text="Race" />
 
         <TextView
             android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/padding_between_text"
+            android:textAppearance="@style/AppTheme.Text.Caption"
             app:layout_constraintLeft_toRightOf="@+id/race"
             app:layout_constraintTop_toTopOf="@+id/race"
             tool:text="Gender" />
@@ -56,6 +68,8 @@
             android:id="@+id/char_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/padding_between_text"
+            android:textAppearance="@style/AppTheme.Text.Caption"
             app:layout_constraintLeft_toRightOf="@+id/gender"
             app:layout_constraintTop_toTopOf="@+id/gender"
             tool:text="Class" />
@@ -64,6 +78,7 @@
             android:id="@+id/level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/AppTheme.Text.Caption"
             app:layout_constraintLeft_toRightOf="@+id/char_class"
             app:layout_constraintTop_toTopOf="@+id/char_class"
             tool:text="Level" />
