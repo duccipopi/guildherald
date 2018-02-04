@@ -1,5 +1,7 @@
 package com.duccipopi.guildherald.view.fragments;
 
+import android.app.LoaderManager;
+import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -14,7 +16,8 @@ import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.dummy.Dummy;
 import com.duccipopi.guildherald.model.HeraldDAO;
 import com.duccipopi.guildherald.model.dao.Guild;
-import com.duccipopi.guildherald.model.implementation.HeraldCallback;
+import com.duccipopi.guildherald.model.base.HeraldCallback;
+import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.GuildViewHolder;
 import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
 
@@ -25,7 +28,7 @@ import java.util.List;
  * Created by ducci on 01/02/2018.
  */
 
-public class GuildListFragment extends Fragment {
+public class GuildListFragment extends Fragment  {
     List<Guild> items = new ArrayList<>();
     RecyclerView recyclerView;
     HeraldDAO api;
@@ -41,9 +44,11 @@ public class GuildListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
         // TODO: Use Loader and real values from DAO
-        for (Pair<String, String> pair : Dummy.getGuildList()) {
+       /* for (Pair<String, String> pair : Dummy.getGuildList()) {
             api.getGuildInfo(pair.second, pair.first, callback);
-        }
+        }*/
+
+       FirebaseDB.loadGuilds(listCallback);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         setupRecycler(items);
@@ -67,7 +72,19 @@ public class GuildListFragment extends Fragment {
 
         @Override
         public void onFailure(Guild guild) {
-            Snackbar.make(getView(), "Error loading guild", Snackbar.LENGTH_LONG);
+            Snackbar.make(getView(), "Error loading guild", Snackbar.LENGTH_LONG).show();
+        }
+    };
+
+    HeraldCallback<Pair<String, String>> listCallback = new HeraldCallback<Pair<String, String>>() {
+        @Override
+        public void onResponse(Pair<String, String> pair) {
+            api.getGuildInfo(pair.second, pair.first, callback);
+        }
+
+        @Override
+        public void onFailure(Pair<String, String> stringStringPair) {
+
         }
     };
 }

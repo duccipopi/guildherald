@@ -1,5 +1,6 @@
 package com.duccipopi.guildherald.presenter;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,12 +33,14 @@ public class GuildViewHolder extends GenericViewHolder<Guild> implements Generic
         realm = itemView.findViewById(R.id.realm);
         members = itemView.findViewById(R.id.members);
 
+        String emblemURL = Utilities.Blizzard.getEmblemURL(item);
+        Log.d("POPI", "URL: " + emblemURL);
         Utilities.Image.loadImage(itemView.getContext(),
                 Utilities.Blizzard.getEmblemURL(item),
                 R.drawable.default_emblem, R.drawable.error_portrait, emblem);
         guildName.setText(item.getName());
         realm.setText(item.getRealm());
-        members.setText(item.getNumMembers());
+        members.setText(Integer.toString(item.getNumMembers()));
     }
 
     @Override

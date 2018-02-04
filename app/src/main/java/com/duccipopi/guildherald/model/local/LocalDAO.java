@@ -2,12 +2,12 @@ package com.duccipopi.guildherald.model.local;
 
 import android.content.ContentResolver;
 
-import com.duccipopi.guildherald.model.implementation.HeraldCallback;
-import com.duccipopi.guildherald.model.implementation.IServiceDAO;
+import com.duccipopi.guildherald.model.base.HeraldCallback;
+import com.duccipopi.guildherald.model.base.IServiceDAO;
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
-import com.duccipopi.guildherald.model.implementation.CharacterConverter;
-import com.duccipopi.guildherald.model.implementation.GuildConverter;
+import com.duccipopi.guildherald.model.base.CharacterConverter;
+import com.duccipopi.guildherald.model.base.GuildConverter;
 import com.duccipopi.guildherald.model.local.provider.HeraldProviderContract;
 import com.duccipopi.guildherald.model.local.task.QueryAsyncTask;
 

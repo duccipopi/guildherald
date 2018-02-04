@@ -1,12 +1,11 @@
 package com.duccipopi.guildherald.model;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
-import com.duccipopi.guildherald.model.implementation.HeraldCallback;
-import com.duccipopi.guildherald.model.implementation.IServiceDAO;
+import com.duccipopi.guildherald.model.base.HeraldCallback;
+import com.duccipopi.guildherald.model.base.IServiceDAO;
 import com.duccipopi.guildherald.model.local.LocalDAO;
 import com.duccipopi.guildherald.model.remote.RemoteDAO;
 

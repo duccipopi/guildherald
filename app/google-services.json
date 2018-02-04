@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "41406474382",
+    "firebase_url": "https://guildherald-1df09.firebaseio.com",
+    "project_id": "guildherald-1df09",
+    "storage_bucket": "guildherald-1df09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41406474382:android:709c61015af97a12",
+        "android_client_info": {
+          "package_name": "com.duccipopi.guildherald"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41406474382-1ua5nfefuotml6hhmukmirdbpn2slb3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.duccipopi.guildherald",
+            "certificate_hash": "8a7521988dd28e4051af6fb13bd4b0100b00f647"
+          }
+        },
+        {
+          "client_id": "41406474382-guaq0u210a6vj2b29b5r8thoirb1rj6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG7frJL15wGPbRB2o3_v9zVpiuUJ9dEXA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41406474382-guaq0u210a6vj2b29b5r8thoirb1rj6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

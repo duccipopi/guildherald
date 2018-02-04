@@ -1,0 +1,19 @@
+{
+  "lastModified": 1517664497000,
+  "name": "Get along Gang",
+  "realm": "Scilla",
+  "battlegroup": "Shadowburn",
+  "level": 25,
+  "side": 1,
+  "achievementPoints": 1080,
+  "emblem": {
+    "icon": 92,
+    "iconColor": "ffb1b8b1",
+    "iconColorId": 14,
+    "border": 0,
+    "borderColor": "ffffffff",
+    "borderColorId": 14,
+    "backgroundColor": "ff232323",
+    "backgroundColorId": 45
+  }
+}

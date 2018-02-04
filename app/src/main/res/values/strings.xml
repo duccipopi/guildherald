@@ -35,4 +35,11 @@
     <string name="gender_female">Female</string>
     <string name="gender_male">Male</string>
     <string name="label_member_s">member(s)</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="label_character_name">Character name</string>
+    <string name="realm">Realm</string>
+    <string name="title_add_character">Add character</string>
+    <string name="title_add_guild">Add guild</string>
+    <string name="label_name">Name</string>
+    <string name="label_none_found">None found</string>
 </resources>

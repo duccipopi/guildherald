@@ -1,16 +1,16 @@
 package com.duccipopi.guildherald.util;
 
+import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.model.dao.Emblem;
 import com.duccipopi.guildherald.model.dao.Guild;
-import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 /**
  * Created by ducci on 02/02/2018.
@@ -20,9 +20,20 @@ public final class Utilities {
 
     public static final class Image {
 
-        public static final void loadImage(Context context, String path, int placeholder, int errorImage,
-                                           ImageView imageView) {
+        public static void loadImage(@NonNull Context context, @NonNull String path,
+                                     int placeholder, int errorImage, @NonNull ImageView imageView) {
             Picasso.with(context).load(path).placeholder(placeholder).error(errorImage).into(imageView);
+        }
+    }
+
+    public static final class SystemServices {
+
+        public static void hideKeyboard(@NonNull Activity activity) {
+            if (activity.getCurrentFocus() != null) {
+                InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+            }
+
         }
     }
 
@@ -82,19 +93,32 @@ public final class Utilities {
         public static int getClassResId(int cclass) {
 
             switch (cclass) {
-                case 1: return R.string.class_warrior;
-                case 2: return R.string.class_paladin;
-                case 3: return R.string.class_hunter;
-                case 4: return R.string.class_rogue;
-                case 5: return R.string.class_priest;
-                case 6: return R.string.class_death_knight;
-                case 7: return R.string.class_shaman;
-                case 8: return R.string.class_mage;
-                case 9: return R.string.class_warlock;
-                case 10: return R.string.class_monk;
-                case 11: return R.string.class_druid;
-                case 12: return R.string.class_demon_hunter;
-                default: return R.string.undefined;
+                case 1:
+                    return R.string.class_warrior;
+                case 2:
+                    return R.string.class_paladin;
+                case 3:
+                    return R.string.class_hunter;
+                case 4:
+                    return R.string.class_rogue;
+                case 5:
+                    return R.string.class_priest;
+                case 6:
+                    return R.string.class_death_knight;
+                case 7:
+                    return R.string.class_shaman;
+                case 8:
+                    return R.string.class_mage;
+                case 9:
+                    return R.string.class_warlock;
+                case 10:
+                    return R.string.class_monk;
+                case 11:
+                    return R.string.class_druid;
+                case 12:
+                    return R.string.class_demon_hunter;
+                default:
+                    return R.string.undefined;
             }
 
         }
@@ -103,15 +127,24 @@ public final class Utilities {
             return gender == 0 ? R.string.gender_male : R.string.gender_female;
         }
 
-        // TODO: Fix format string
-        public static final String BASE_EMBLEM_URL =
-                "http://tabard.gnomeregan.info/tabard.php?icon=emblem_%1$d2\\\\&border=border_%2$d2\\\\&iconcolor=%3\\\\&bgcolor=%4\\\\&bordercolor=%5\\\\&faction=%6";
 
+        public static final String BASE_EMBLEM_URL =
+                "http://tabard.gnomeregan.info/tabard.php";
+
+        // Emblem image from http://tabard.gnomeregan.info
+        // Emblem URL example:
+        //http://tabard.gnomeregan.info/tabard.php?icon=emblem_00&border=border_00&iconcolor=ffffff&bgcolor=000000&bordercolor=63a300&faction=Alliance
         public static String getEmblemURL(Guild guild) {
-            //http://tabard.gnomeregan.info/tabard.php?icon=emblem_00&border=border_00&iconcolor=ffffff&bgcolor=000000&bordercolor=63a300&faction=Alliance
-            return String.format(BASE_EMBLEM_URL, guild.getEmblem().getIcon(), guild.getEmblem().getBorder(),
-                    guild.getEmblem().getIconColor(), guild.getEmblem().getBackgroundColor(),
-                    guild.getEmblem().getBorderColor(), guild.getFaction() == 0 ? "Alliance" : "Horde");
+
+            Emblem emblem = guild.getEmblem();
+            return Uri.parse(BASE_EMBLEM_URL).buildUpon()
+                    .appendQueryParameter("icon", String.format("emblem_%1$02d", emblem.getIcon()))
+                    .appendQueryParameter("border", String.format("border_%1$02d", emblem.getBorder()))
+                    .appendQueryParameter("iconcolor", emblem.getIconColor().substring(2))
+                    .appendQueryParameter("bgcolor", emblem.getBackgroundColor().substring(2))
+                    .appendQueryParameter("bordercolor", emblem.getBorderColor().substring(2))
+                    .appendQueryParameter("faction", guild.getFaction() == 0 ? "Alliance" : "Horde")
+                    .build().toString();
         }
     }
 

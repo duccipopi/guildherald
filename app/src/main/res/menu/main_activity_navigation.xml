@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_character"
+        android:id="@+id/navigation_character"
+        android:icon="@drawable/default_portrait"
         android:title="@string/characters" />
     <item
-        android:id="@+id/action_guild"
+        android:id="@+id/navigation_guild"
+        android:icon="@drawable/default_emblem"
         android:title="@string/guilds" />
 </menu>

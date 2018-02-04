@@ -14,7 +14,8 @@ import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.dummy.Dummy;
 import com.duccipopi.guildherald.model.HeraldDAO;
 import com.duccipopi.guildherald.model.dao.Character;
-import com.duccipopi.guildherald.model.implementation.HeraldCallback;
+import com.duccipopi.guildherald.model.base.HeraldCallback;
+import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.CharacterViewHolder;
 import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
 
@@ -43,9 +44,10 @@ public class CharacterListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
         // TODO: Use Loader and real values from DAO
-        for (Pair<String, String> pair : Dummy.getCharList()) {
+        /*for (Pair<String, String> pair : Dummy.getCharList()) {
             api.getCharacterBaseInfo(pair.second, pair.first, callback);
-        }
+        }*/
+        FirebaseDB.loadCharacters(listCallback);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         setupRecycler(items);
@@ -69,7 +71,19 @@ public class CharacterListFragment extends Fragment {
 
         @Override
         public void onFailure(Character character) {
-            Snackbar.make(getView(), "Error loading character", Snackbar.LENGTH_LONG);
+            Snackbar.make(getView(), "Error loading character", Snackbar.LENGTH_LONG).show();
+        }
+    };
+
+    HeraldCallback<Pair<String, String>> listCallback = new HeraldCallback<Pair<String, String>>() {
+        @Override
+        public void onResponse(Pair<String, String> pair) {
+            api.getCharacterBaseInfo(pair.second, pair.first, callback);
+        }
+
+        @Override
+        public void onFailure(Pair<String, String> stringStringPair) {
+
         }
     };
 }

@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.model.implementation;
+package com.duccipopi.guildherald.model.base;
 
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;

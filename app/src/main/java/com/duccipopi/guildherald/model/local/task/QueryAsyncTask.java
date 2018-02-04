@@ -5,8 +5,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 
-import com.duccipopi.guildherald.model.implementation.CursorConverter;
-import com.duccipopi.guildherald.model.implementation.HeraldCallback;
+import com.duccipopi.guildherald.model.base.CursorConverter;
+import com.duccipopi.guildherald.model.base.HeraldCallback;
 
 /**
  * Created by ducci on 29/01/2018.

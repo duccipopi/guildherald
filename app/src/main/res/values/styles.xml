@@ -11,11 +11,15 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AppTheme.Text.Subtitle" parent="Base.TextAppearance.AppCompat.Subhead">
-    </style>
+    <style name="AppTheme.Text.Subtitle" parent="Base.TextAppearance.AppCompat.Subhead"></style>
 
     <style name="AppTheme.Text.Caption" parent="Base.TextAppearance.AppCompat.Caption">
         <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="AppTheme.Button.Flat" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="background">@android:color/transparent</item>
+        <item name="android:shadowColor">@android:color/transparent</item>
     </style>
 
     <style name="HordeTheme" parent="AppTheme">
@@ -29,5 +33,14 @@
         <item name="colorPrimaryDark">@color/allianceDarkColor</item>
         <item name="colorAccent">@color/allianceAccentColor</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

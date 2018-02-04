@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.model.implementation;
+package com.duccipopi.guildherald.model.base;
 
 import android.database.Cursor;
 

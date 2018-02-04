@@ -1,5 +1,7 @@
 package com.duccipopi.guildherald.model.dao;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by ducci on 28/01/2018.
  */
@@ -8,7 +10,7 @@ public class Guild {
 
     private String name;
     private String realm;
-    private int faction;
+    @SerializedName("side") private int faction;
     private int numMembers;
     private int achievements;
     private Emblem emblem;

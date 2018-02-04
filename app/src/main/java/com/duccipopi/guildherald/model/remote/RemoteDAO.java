@@ -2,16 +2,14 @@ package com.duccipopi.guildherald.model.remote;
 
 import android.support.v4.util.ArrayMap;
 
-import com.duccipopi.guildherald.model.implementation.HeraldCallback;
-import com.duccipopi.guildherald.model.implementation.IServiceDAO;
+import com.duccipopi.guildherald.model.base.HeraldCallback;
+import com.duccipopi.guildherald.model.base.IServiceDAO;
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
 import com.duccipopi.guildherald.model.remote.blizzard.BlizzardAPIService;
 
 import java.util.Map;
 
-import okhttp3.Cache;
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

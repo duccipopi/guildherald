@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#2dc400</color>
+    <color name="colorPrimaryLight">#6ff84a</color>
     <color name="colorPrimaryDark">#009200</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#7C4DFF</color>
 
     <color name="hordeColor">#d50000</color>
     <color name="hordeLightColor">#ff5131</color>
@@ -15,4 +16,5 @@
     <color name="allianceAccentColor">#ffab00</color>
 
     <color name="textColor">#ffffff</color>
+    <color name="textColorSecundary">#000000</color>
 </resources>

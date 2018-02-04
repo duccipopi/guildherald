@@ -1,4 +1,4 @@
-package com.duccipopi.guildherald.model.implementation;
+package com.duccipopi.guildherald.model.base;
 
 import retrofit2.Call;
 import retrofit2.Callback;

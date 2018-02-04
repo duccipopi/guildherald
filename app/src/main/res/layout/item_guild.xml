@@ -15,6 +15,7 @@
             android:id="@+id/emblem"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:paddingEnd="@dimen/layout_inner_margin"
             android:scaleType="fitCenter"
             android:src="@drawable/default_emblem"
             app:layout_constraintBottom_toBottomOf="parent"
