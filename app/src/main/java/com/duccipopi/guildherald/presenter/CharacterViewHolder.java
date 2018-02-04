@@ -49,7 +49,6 @@ public class CharacterViewHolder extends GenericViewHolder<Character>
         gender.setText(Utilities.Blizzard.getGenderResId(item.getGender()));
         charClass.setText(Utilities.Blizzard.getClassResId(item.getCClass()));
         level.setText(Integer.toString(item.getLevel()));
-
     }
 
     @Override

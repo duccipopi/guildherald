@@ -1,6 +1,7 @@
 package com.duccipopi.guildherald.view.fragments;
 
 import android.app.LoaderManager;
+import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,11 +16,14 @@ import android.view.ViewGroup;
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.dummy.Dummy;
 import com.duccipopi.guildherald.model.HeraldDAO;
+import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
 import com.duccipopi.guildherald.model.base.HeraldCallback;
 import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.GuildViewHolder;
 import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
+import com.duccipopi.guildherald.view.ActivityContract;
+import com.duccipopi.guildherald.view.CharacterDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,11 +47,6 @@ public class GuildListFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
-        // TODO: Use Loader and real values from DAO
-       /* for (Pair<String, String> pair : Dummy.getGuildList()) {
-            api.getGuildInfo(pair.second, pair.first, callback);
-        }*/
-
        FirebaseDB.loadGuilds(listCallback);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
@@ -60,7 +59,8 @@ public class GuildListFragment extends Fragment  {
         recyclerView.setAdapter(
                 new GenericRecyclerViewAdapter<>(items,
                         new GuildViewHolder(new View(getContext())),
-                        R.layout.item_guild));
+                        R.layout.item_guild,
+                        onClickListener));
     }
 
     HeraldCallback<Guild> callback = new HeraldCallback<Guild>() {
@@ -85,6 +85,18 @@ public class GuildListFragment extends Fragment  {
         @Override
         public void onFailure(Pair<String, String> stringStringPair) {
 
+        }
+    };
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getContext(), CharacterDetailsActivity.class);
+            Guild guild = (Guild) view.getTag();
+            intent.putExtra(ActivityContract.EXTRA_NAME, guild.getName());
+            intent.putExtra(ActivityContract.EXTRA_REALM, guild.getRealm());
+
+            startActivity(intent);
         }
     };
 }

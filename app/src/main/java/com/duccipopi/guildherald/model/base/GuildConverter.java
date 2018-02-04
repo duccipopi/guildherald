@@ -18,7 +18,7 @@ public class GuildConverter implements CursorConverter<Guild> {
     @Override
     public Guild convert(Cursor cursor) {
 
-        if (cursor == null) return null;
+        if (cursor == null || !cursor.moveToFirst()) return null;
 
         return new Guild(
                 cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),

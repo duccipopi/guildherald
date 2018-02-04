@@ -15,7 +15,8 @@ import com.duccipopi.guildherald.util.Utilities;
  * Created by ducci on 03/02/2018.
  */
 
-public class GuildViewHolder extends GenericViewHolder<Guild> implements GenericViewHolderFactory<GuildViewHolder> {
+public class GuildViewHolder extends GenericViewHolder<Guild>
+        implements GenericViewHolderFactory<GuildViewHolder> {
 
     ImageView emblem;
     TextView guildName;
@@ -33,8 +34,6 @@ public class GuildViewHolder extends GenericViewHolder<Guild> implements Generic
         realm = itemView.findViewById(R.id.realm);
         members = itemView.findViewById(R.id.members);
 
-        String emblemURL = Utilities.Blizzard.getEmblemURL(item);
-        Log.d("POPI", "URL: " + emblemURL);
         Utilities.Image.loadImage(itemView.getContext(),
                 Utilities.Blizzard.getEmblemURL(item),
                 R.drawable.default_emblem, R.drawable.error_portrait, emblem);

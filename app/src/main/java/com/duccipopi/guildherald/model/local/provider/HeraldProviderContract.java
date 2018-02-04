@@ -7,8 +7,6 @@ import android.provider.BaseColumns;
  * Created by ducci on 28/01/2018.
  */
 
-// TODO: Include database for favorite characters
-
 public interface HeraldProviderContract {
 
     String AUTHORITY = "com.duccipopi.guildherald.provider";

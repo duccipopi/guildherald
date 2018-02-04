@@ -23,7 +23,7 @@ public class CharacterConverter implements CursorConverter<Character> {
     @Override
     public Character convert(Cursor cursor) {
 
-        if (cursor == null) return null;
+        if (cursor == null || !cursor.moveToFirst()) return null;
 
         return new Character(
                 cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),

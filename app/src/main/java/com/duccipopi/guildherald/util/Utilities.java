@@ -38,10 +38,21 @@ public final class Utilities {
     }
 
     public static final class Blizzard {
+        public static final int FACTION_HORDE = 1;
+        public static final int FACTION_ALLIANCE = 0;
+
+
         static String BASE_THUMBNAIL_URL = "http://us.battle.net/static-render/us/";
+        static String THUMBNAIL_SUFFIX = "avatar";
+        static String INSET_SUFFIX = "inset";
+
 
         public static String getThumbnailFullURL(String thumbnail) {
             return BASE_THUMBNAIL_URL + thumbnail;
+        }
+
+        public static String getInsetFullURL(String thumbnail) {
+            return BASE_THUMBNAIL_URL + thumbnail.replace(THUMBNAIL_SUFFIX, INSET_SUFFIX);
         }
 
         public static int getRaceResId(int race) {
@@ -127,9 +138,10 @@ public final class Utilities {
             return gender == 0 ? R.string.gender_male : R.string.gender_female;
         }
 
-
         public static final String BASE_EMBLEM_URL =
                 "http://tabard.gnomeregan.info/tabard.php";
+
+
 
         // Emblem image from http://tabard.gnomeregan.info
         // Emblem URL example:
@@ -143,7 +155,7 @@ public final class Utilities {
                     .appendQueryParameter("iconcolor", emblem.getIconColor().substring(2))
                     .appendQueryParameter("bgcolor", emblem.getBackgroundColor().substring(2))
                     .appendQueryParameter("bordercolor", emblem.getBorderColor().substring(2))
-                    .appendQueryParameter("faction", guild.getFaction() == 0 ? "Alliance" : "Horde")
+                    .appendQueryParameter("faction", guild.getFaction() == FACTION_ALLIANCE ? "Alliance" : "Horde")
                     .build().toString();
         }
     }

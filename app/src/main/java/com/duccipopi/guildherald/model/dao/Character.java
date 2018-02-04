@@ -15,8 +15,8 @@ public class Character {
     private int gender;
     private int level;
     private int faction;
-    private int achievements;
-    private int honorableKills;
+    @SerializedName("achievementPoints") private int achievements;
+    @SerializedName("totalHonorableKills") private int honorableKills;
     private String thumbnail;
 
     private Stats stats;
@@ -35,6 +35,23 @@ public class Character {
         this.achievements = achievements;
         this.honorableKills = honorableKills;
         this.thumbnail = thumbnail;
+    }
+
+    public Character(String name, String realm, int cClass, int race, int gender, int level,
+                     int faction, int achievements, int honorableKills, String thumbnail,
+                     Guild guild, Stats stats) {
+        this.name = name;
+        this.realm = realm;
+        this.cClass = cClass;
+        this.race = race;
+        this.gender = gender;
+        this.level = level;
+        this.faction = faction;
+        this.achievements = achievements;
+        this.honorableKills = honorableKills;
+        this.thumbnail = thumbnail;
+        this.guild = guild;
+        this.stats = stats;
     }
 
     public String getName() {

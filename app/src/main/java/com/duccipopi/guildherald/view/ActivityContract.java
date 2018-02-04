@@ -10,4 +10,7 @@ public interface ActivityContract {
 
     String ACTION_ADD_CHARACTER = Intent.ACTION_INSERT + ".character";
     String ACTION_ADD_GUILD = Intent.ACTION_INSERT + ".guild";
+
+    String EXTRA_NAME = "extra_name";
+    String EXTRA_REALM = "extra_realm";
 }

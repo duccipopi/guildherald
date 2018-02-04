@@ -1,6 +1,7 @@
 package com.duccipopi.guildherald.presenter.base;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +18,16 @@ public class GenericRecyclerViewAdapter<T> extends RecyclerView.Adapter<GenericV
     private List<T> mItems;
     private GenericViewHolderFactory<? extends GenericViewHolder<T>> mViewHolderFactory;
     private int mItemLayout;
+    private View.OnClickListener mOnClickListener;
 
     public GenericRecyclerViewAdapter(@NonNull List<T> items,
                                       @NonNull GenericViewHolderFactory<? extends GenericViewHolder<T>> viewHolderFactory,
-                                      int itemLayout) {
+                                      int itemLayout,
+                                      @Nullable View.OnClickListener onClickListener) {
         mItems = items;
         mViewHolderFactory = viewHolderFactory;
         mItemLayout = itemLayout;
+        mOnClickListener = onClickListener;
     }
 
     @Override
@@ -35,6 +39,11 @@ public class GenericRecyclerViewAdapter<T> extends RecyclerView.Adapter<GenericV
     @Override
     public void onBindViewHolder(GenericViewHolder<T> holder, int position) {
         holder.bind(mItems.get(position));
+        holder.itemView.setTag(mItems.get(position));
+
+        if (mOnClickListener != null) {
+            holder.itemView.setOnClickListener(mOnClickListener);
+        }
     }
 
     @Override

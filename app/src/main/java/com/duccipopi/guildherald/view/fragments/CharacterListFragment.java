@@ -1,5 +1,6 @@
 package com.duccipopi.guildherald.view.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,8 @@ import com.duccipopi.guildherald.model.base.HeraldCallback;
 import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.CharacterViewHolder;
 import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
+import com.duccipopi.guildherald.view.ActivityContract;
+import com.duccipopi.guildherald.view.CharacterDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,10 +46,6 @@ public class CharacterListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
-        // TODO: Use Loader and real values from DAO
-        /*for (Pair<String, String> pair : Dummy.getCharList()) {
-            api.getCharacterBaseInfo(pair.second, pair.first, callback);
-        }*/
         FirebaseDB.loadCharacters(listCallback);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
@@ -59,7 +58,8 @@ public class CharacterListFragment extends Fragment {
         recyclerView.setAdapter(
                 new GenericRecyclerViewAdapter<>(items,
                         new CharacterViewHolder(new View(getContext())),
-                        R.layout.item_character));
+                        R.layout.item_character,
+                        onClickListener));
     }
 
     HeraldCallback<Character> callback = new HeraldCallback<Character>() {
@@ -84,6 +84,18 @@ public class CharacterListFragment extends Fragment {
         @Override
         public void onFailure(Pair<String, String> stringStringPair) {
 
+        }
+    };
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getContext(), CharacterDetailsActivity.class);
+            Character character = (Character) view.getTag();
+            intent.putExtra(ActivityContract.EXTRA_NAME, character.getName());
+            intent.putExtra(ActivityContract.EXTRA_REALM, character.getRealm());
+
+            startActivity(intent);
         }
     };
 }

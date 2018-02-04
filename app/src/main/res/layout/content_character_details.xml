@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.duccipopi.guildherald.view.CharacterDetailsActivity"
+    tools:showIn="@layout/activity_character_details">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- Primary stats -->
+
+        <LinearLayout
+            android:id="@+id/primary_stats"
+            android:padding="12dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/secondary_stats">
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/health"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Health"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/health_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle"
+                        tool:text="Power" />
+
+                    <TextView
+                        android:id="@+id/power_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="100" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/achievements"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Achievements"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/achievements_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/honorablekills"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Honorable kills"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/honorablekills_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Secondary Stats -->
+        <LinearLayout
+            android:id="@+id/secondary_stats"
+            android:padding="12dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/primary_stats">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/strength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Strength"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/strength_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_gravity="end|center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/agility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agility"
+                        android:layout_gravity="start|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/agility_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="100" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/intellect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Intellect"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/intellect_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/stamina"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Stamina"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/stamina_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Tertiary stats -->
+        <LinearLayout
+            android:id="@+id/tertiary_stats"
+            android:padding="12dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/secondary_stats"
+            app:layout_constraintTop_toBottomOf="@id/secondary_stats">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/critical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Critical"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/critical_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_gravity="end|center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/haste"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Haste"
+                        android:layout_gravity="start|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/haste_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="100" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/mastery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Mastery"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/mastery_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/versatility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Versatility"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/versatility_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Defense stats -->
+        <LinearLayout
+            android:id="@+id/defense_stats"
+            android:padding="12dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/primary_stats"
+            app:layout_constraintTop_toBottomOf="@id/secondary_stats">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/armor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Armor"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/armor_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_gravity="end|center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/dodge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dodge"
+                        android:layout_gravity="start|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/dodge_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="100" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/parry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Parry"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/parry_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/block"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:text="Block"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/block_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.Text.Caption"
+                        tool:text="10000" />
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

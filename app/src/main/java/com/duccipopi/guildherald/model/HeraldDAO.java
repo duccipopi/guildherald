@@ -18,11 +18,8 @@ import java.util.Date;
  */
 
 // TODO: Save recovered information locally
-// TODO: Save Quota information
-/* TODO: Choose wisely between Remote or local information
-            Check if exist locally
-            Check renew date
-*/
+// TODO: Look locally and after remotally
+
 public class HeraldDAO implements IServiceDAO {
 
     private final Context mContext;
@@ -55,7 +52,7 @@ public class HeraldDAO implements IServiceDAO {
 
     private Date getQuotaRenewDate(Context context) {
         //Tuesday, January 30, 2018 2:00:00 AM GMT
-        // TODO: Get from shared preference
+        // TODO: Remove quota info
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy K:mm:ss a z");
         try {
             return simpleDateFormat.parse("Tuesday, January 30, 2018 2:00:00 AM GMT");
