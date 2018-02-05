@@ -73,10 +73,19 @@ public class RemoteDAO implements IServiceDAO {
 
     // Get guild info (without members)
     @Override
-    public void getGuildInfo(String realm, String name, HeraldCallback<Guild> callback) {
+    public void getGuildBaseInfo(String realm, String name, HeraldCallback<Guild> callback) {
         BlizzardAPIService service = getBlizzardAPIService();
 
-        Call<Guild> guildCall = service.getGuildInfo(realm, name);
+        Call<Guild> guildCall = service.getGuildBaseInfo(realm, name);
+        guildCall.enqueue(callback);
+    }
+
+    // Get guild info (without members)
+    @Override
+    public void getGuildFullInfo(String realm, String name, HeraldCallback<Guild> callback) {
+        BlizzardAPIService service = getBlizzardAPIService();
+
+        Call<Guild> guildCall = service.getGuildFullInfo(realm, name);
         guildCall.enqueue(callback);
     }
 

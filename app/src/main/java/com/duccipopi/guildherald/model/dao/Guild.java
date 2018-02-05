@@ -11,17 +11,25 @@ public class Guild {
     private String name;
     private String realm;
     @SerializedName("side") private int faction;
-    private int numMembers;
-    private int achievements;
+    private Member[] members;
+    @SerializedName("achievementPoints") private int achievements;
     private Emblem emblem;
 
-    public Guild(String name, String realm, int faction, int numMembers, int achievements, Emblem emblem) {
+    public Guild(String name, String realm, int faction, int achievements, Emblem emblem) {
         this.name = name;
         this.realm = realm;
         this.faction = faction;
-        this.numMembers = numMembers;
         this.achievements = achievements;
         this.emblem = emblem;
+    }
+
+    public Guild(String name, String realm, int faction, int achievements, Emblem emblem, Member[] members) {
+        this.name = name;
+        this.realm = realm;
+        this.faction = faction;
+        this.achievements = achievements;
+        this.emblem = emblem;
+        this.members = members;
     }
 
     public String getName() {
@@ -37,7 +45,7 @@ public class Guild {
     }
 
     public int getNumMembers() {
-        return numMembers;
+        return members != null ? members.length : 0;
     }
 
     public int getAchievements() {
@@ -46,5 +54,9 @@ public class Guild {
 
     public Emblem getEmblem() {
         return emblem;
+    }
+
+    public Member[] getMembers() {
+        return members;
     }
 }

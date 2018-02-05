@@ -1,5 +1,6 @@
 package com.duccipopi.guildherald.model.firebase;
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.firebase.ui.auth.AuthUI;
@@ -14,17 +15,20 @@ import java.util.List;
 
 public class Authenticator {
 
-    public static void startAuthenticationUI(Context context) {
+    public static final int REQUEST_SIGNING = 101;
+
+    public static void startAuthenticationUI(Activity context) {
         // Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.GoogleBuilder().build());
+                new AuthUI.IdpConfig.EmailBuilder().build());
 
         // Create and launch sign-in intent
-        context.startActivity(
+        context.startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
-                        .build());
+                        .build(),
+                REQUEST_SIGNING);
     }
 
     public static boolean isUserAuthenticated() {
@@ -32,6 +36,6 @@ public class Authenticator {
     }
 
     public static String getUser() {
-        return "XMxCCqQk8yeIrB4Hf1jM1TiLT8z2"; //FirebaseAuth.getInstance().getCurrentUser().getUid();
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 }

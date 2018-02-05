@@ -2,6 +2,7 @@ package com.duccipopi.guildherald.model;
 
 import android.content.Context;
 
+import com.duccipopi.guildherald.model.base.ICacheDAO;
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
 import com.duccipopi.guildherald.model.base.HeraldCallback;
@@ -30,40 +31,93 @@ public class HeraldDAO implements IServiceDAO {
 
     @Override
     public void getCharacterBaseInfo(String realm, String name, HeraldCallback<Character> callback) {
-        getDelegate().getCharacterBaseInfo(realm, name, callback);
+        getDelegate(true).getCharacterBaseInfo(realm, name, callback);
     }
 
     @Override
     public void getCharacterFullInfo(String realm, String name, HeraldCallback<Character> callback) {
-        getDelegate().getCharacterFullInfo(realm, name, callback);
+        getDelegate(true).getCharacterFullInfo(realm, name, callback);
     }
 
     @Override
-    public void getGuildInfo(String realm, String name, HeraldCallback<Guild> callback) {
-        getDelegate().getGuildInfo(realm, name, callback);
+    public void getGuildBaseInfo(String realm, String name, HeraldCallback<Guild> callback) {
+        getDelegate(true).getGuildBaseInfo(realm, name, callback);
     }
 
-    private IServiceDAO getDelegate() {
-        if (isQuotaRenewed(getQuotaRenewDate(mContext)))
+    @Override
+    public void getGuildFullInfo(String realm, String name, HeraldCallback<Guild> callback) {
+        getDelegate(true).getGuildFullInfo(realm, name, callback);
+    }
+
+    private IServiceDAO getDelegate(boolean remote) {
+        if (remote)
             return RemoteDAO.getInstance();
         else
             return LocalDAO.getInstance(mContext.getContentResolver());
     }
 
-    private Date getQuotaRenewDate(Context context) {
-        //Tuesday, January 30, 2018 2:00:00 AM GMT
-        // TODO: Remove quota info
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy K:mm:ss a z");
-        try {
-            return simpleDateFormat.parse("Tuesday, January 30, 2018 2:00:00 AM GMT");
-        } catch (ParseException e) {
-            return null;
+    private ICacheDAO getCacheDAO() {
+        return LocalDAO.getInstance(mContext.getContentResolver());
+    }
+
+
+    private enum METHOD {
+        GETCHARACTERBASEINFO,
+        GETGUILDBASEINFO,
+        SAVEINFORMATION
+    }
+
+    ;
+
+    private class InterceptorCallback extends HeraldCallback {
+
+        private HeraldCallback mCallback;
+        private METHOD mMethod;
+        private String mName;
+        private String mRealm;
+
+        public InterceptorCallback(METHOD method, String name, String realm, HeraldCallback callback) {
+            super();
+            mMethod = method;
+            mName = name;
+            mRealm = realm;
+            mCallback = callback;
+        }
+
+        @Override
+        public void onResponse(Object o) {
+            if (o == null) {
+                switch (mMethod) {
+                    case GETCHARACTERBASEINFO:
+                        getDelegate(true).getCharacterBaseInfo(mRealm, mName, getSavingInterceptor());
+                        break;
+                    case GETGUILDBASEINFO:
+                        getDelegate(true).getGuildBaseInfo(mRealm, mName, getSavingInterceptor());
+                        break;
+                }
+            } else {
+                if (mMethod == METHOD.SAVEINFORMATION) {
+                    if (o instanceof Character)
+                        getCacheDAO().saveCharacter((Character) o);
+                    else if (o instanceof Guild)
+                        getCacheDAO().saveGuild((Guild) o);
+                }
+
+                mCallback.onResponse(o);
+            }
+        }
+
+        @Override
+        public void onFailure(Object o) {
+            mCallback.onFailure(o);
+        }
+
+        private InterceptorCallback getSavingInterceptor() {
+            mMethod = METHOD.SAVEINFORMATION;
+            return this;
         }
     }
 
-    private boolean isQuotaRenewed(Date date) {
-        Date now = new Date();
-        return date == null || now.after(date);
-    }
+    ;
 
 }

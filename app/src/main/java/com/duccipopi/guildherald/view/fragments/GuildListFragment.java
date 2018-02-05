@@ -1,8 +1,6 @@
 package com.duccipopi.guildherald.view.fragments;
 
-import android.app.LoaderManager;
 import android.content.Intent;
-import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -14,16 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duccipopi.guildherald.R;
-import com.duccipopi.guildherald.dummy.Dummy;
 import com.duccipopi.guildherald.model.HeraldDAO;
-import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
 import com.duccipopi.guildherald.model.base.HeraldCallback;
 import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.GuildViewHolder;
 import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
 import com.duccipopi.guildherald.view.ActivityContract;
-import com.duccipopi.guildherald.view.CharacterDetailsActivity;
+import com.duccipopi.guildherald.view.GuildDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +28,13 @@ import java.util.List;
  * Created by ducci on 01/02/2018.
  */
 
-public class GuildListFragment extends Fragment  {
+public class GuildListFragment extends Fragment {
     List<Guild> items = new ArrayList<>();
     RecyclerView recyclerView;
     HeraldDAO api;
 
     public GuildListFragment() {
         super();
-        api = new HeraldDAO(getContext());
     }
 
     @Nullable
@@ -47,7 +42,9 @@ public class GuildListFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
-       FirebaseDB.loadGuilds(listCallback);
+        api = new HeraldDAO(getContext());
+
+        FirebaseDB.loadGuilds(listCallback);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         setupRecycler(items);
@@ -79,7 +76,7 @@ public class GuildListFragment extends Fragment  {
     HeraldCallback<Pair<String, String>> listCallback = new HeraldCallback<Pair<String, String>>() {
         @Override
         public void onResponse(Pair<String, String> pair) {
-            api.getGuildInfo(pair.second, pair.first, callback);
+            api.getGuildBaseInfo(pair.second, pair.first, callback);
         }
 
         @Override
@@ -91,7 +88,7 @@ public class GuildListFragment extends Fragment  {
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(getContext(), CharacterDetailsActivity.class);
+            Intent intent = new Intent(getContext(), GuildDetailsActivity.class);
             Guild guild = (Guild) view.getTag();
             intent.putExtra(ActivityContract.EXTRA_NAME, guild.getName());
             intent.putExtra(ActivityContract.EXTRA_REALM, guild.getRealm());

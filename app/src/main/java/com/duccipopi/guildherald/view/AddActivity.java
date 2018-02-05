@@ -21,7 +21,9 @@ import com.duccipopi.guildherald.model.dao.Guild;
 import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.CharacterViewHolder;
 import com.duccipopi.guildherald.presenter.GuildViewHolder;
+import com.duccipopi.guildherald.util.AdMobManager;
 import com.duccipopi.guildherald.util.Utilities;
+import com.google.android.gms.ads.AdView;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -111,12 +113,19 @@ public class AddActivity extends AppCompatActivity {
                         api.getCharacterBaseInfo(editRealm.getText().toString(),
                                 editName.getText().toString(), callbackCharacter);
                     } else if (ActivityContract.ACTION_ADD_GUILD.equals(getIntent().getAction())) {
-                        api.getGuildInfo(editRealm.getText().toString(), editName.getText().toString(),
+                        api.getGuildBaseInfo(editRealm.getText().toString(), editName.getText().toString(),
                                 callbackGuild);
                     }
                 }
             }
         });
+
+        // Ad View setup
+        // Create a banner ad. The ad size and ad unit ID must be set before calling loadAd.
+        AdView adView = findViewById(R.id.adView);
+
+        // Start loading the ad.
+        adView.loadAd(AdMobManager.getAdRequest());
     }
 
     HeraldCallback<Character> callbackCharacter = new HeraldCallback<Character>() {

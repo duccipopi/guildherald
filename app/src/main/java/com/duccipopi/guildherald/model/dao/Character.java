@@ -20,7 +20,7 @@ public class Character {
     private String thumbnail;
 
     private Stats stats;
-    private Guild guild;
+    private Object guild;
     private Equipment[] equipments;
 
     public Character(String name, String realm, int cClass, int race, int gender, int level,
@@ -98,7 +98,7 @@ public class Character {
         return stats;
     }
 
-    public Guild getGuild() {
+    public Object getGuild() {
         return guild;
     }
 

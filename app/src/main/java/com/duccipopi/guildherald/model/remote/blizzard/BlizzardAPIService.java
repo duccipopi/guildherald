@@ -28,6 +28,10 @@ public interface BlizzardAPIService {
     Call<Character> getCharacterFullInfo(@Path("realm") String realm, @Path("charname") String name);
 
     @GET("guild/{realm}/{guildname}?" + LOCALE + API_KEY)
-    Call<Guild> getGuildInfo(@Path("realm") String realm, @Path("guildname") String name);
+    Call<Guild> getGuildBaseInfo(@Path("realm") String realm, @Path("guildname") String name);
+
+
+    @GET("guild/{realm}/{guildname}?fields=members%2C" + LOCALE + API_KEY)
+    Call<Guild> getGuildFullInfo(@Path("realm") String realm, @Path("guildname") String name);
 
 }

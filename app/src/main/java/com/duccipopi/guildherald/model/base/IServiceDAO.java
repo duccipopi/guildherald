@@ -16,5 +16,9 @@ public interface IServiceDAO {
     void getCharacterFullInfo(String realm, String name, HeraldCallback<Character> callback);
 
     // Get guild info (without members)
-    void getGuildInfo(String realm, String name, HeraldCallback<Guild> callback);
+    void getGuildBaseInfo(String realm, String name, HeraldCallback<Guild> callback);
+
+    // Get guild info (with members)
+    void getGuildFullInfo(String realm, String name, HeraldCallback<Guild> callback);
+
 }

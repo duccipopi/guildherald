@@ -1,5 +1,6 @@
 package com.duccipopi.guildherald.model.base;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 
 import com.duccipopi.guildherald.model.dao.Character;
@@ -19,7 +20,7 @@ import static com.duccipopi.guildherald.model.local.provider.HeraldProviderContr
  * Created by ducci on 29/01/2018.
  */
 
-public class CharacterConverter implements CursorConverter<Character> {
+public class CharacterConverter implements CursorConverter<Character>, ContentValuesCreator<Character> {
     @Override
     public Character convert(Cursor cursor) {
 
@@ -38,5 +39,24 @@ public class CharacterConverter implements CursorConverter<Character> {
                 cursor.getString(cursor.getColumnIndex(COLUMN_THUMBNAIL))
 
         );
+    }
+
+    @Override
+    public ContentValues createFrom(Character character) {
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_NAME, character.getName());
+        cv.put(COLUMN_REALM, character.getRealm());
+        cv.put(COLUMN_CLASS, character.getCClass());
+        cv.put(COLUMN_RACE, character.getRace());
+        cv.put(COLUMN_GENDER, character.getGender());
+        cv.put(COLUMN_LEVEL, character.getLevel());
+        cv.put(COLUMN_FACTION, character.getFaction());
+        cv.put(COLUMN_ACHIEVEMENTS, character.getAchievements());
+        cv.put(COLUMN_HONORABLE_KILLS, character.getHonorableKills());
+        cv.put(COLUMN_THUMBNAIL, character.getThumbnail());
+
+        return cv;
+
     }
 }

@@ -36,15 +36,12 @@ public class CharacterListFragment extends Fragment {
     HeraldDAO api;
 
 
-    public CharacterListFragment() {
-        super();
-        api = new HeraldDAO(getContext());
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
+
+        api = new HeraldDAO(getContext());
 
         FirebaseDB.loadCharacters(listCallback);
 
