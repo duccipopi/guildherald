@@ -64,7 +64,8 @@ public class GuildListFragment extends Fragment {
         @Override
         public void onResponse(Guild guild) {
             items.add(guild);
-            recyclerView.getAdapter().notifyDataSetChanged();
+            //recyclerView.getAdapter().notifyDataSetChanged();
+            recyclerView.getAdapter().notifyItemInserted(items.size()-1);
         }
 
         @Override

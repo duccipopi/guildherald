@@ -18,9 +18,6 @@ import java.util.Date;
  * Created by ducci on 28/01/2018.
  */
 
-// TODO: Save recovered information locally
-// TODO: Look locally and after remotally
-
 public class HeraldDAO implements IServiceDAO {
 
     private final Context mContext;

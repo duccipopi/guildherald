@@ -12,10 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duccipopi.guildherald.R;
-import com.duccipopi.guildherald.dummy.Dummy;
 import com.duccipopi.guildherald.model.HeraldDAO;
-import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.base.HeraldCallback;
+import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.firebase.FirebaseDB;
 import com.duccipopi.guildherald.presenter.CharacterViewHolder;
 import com.duccipopi.guildherald.presenter.base.GenericRecyclerViewAdapter;
@@ -63,7 +62,8 @@ public class CharacterListFragment extends Fragment {
         @Override
         public void onResponse(Character character) {
             items.add(character);
-            recyclerView.getAdapter().notifyDataSetChanged();
+            //recyclerView.getAdapter().notifyDataSetChanged();
+            recyclerView.getAdapter().notifyItemInserted(items.size()-1);
         }
 
         @Override

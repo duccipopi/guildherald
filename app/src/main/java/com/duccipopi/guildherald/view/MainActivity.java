@@ -35,50 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == Authenticator.REQUEST_SIGNING) {
             if (resultCode != RESULT_OK) finish();
-
-            setContentView(R.layout.activity_main);
-
-            // View pager setup
-            final ViewPager viewPager = findViewById(R.id.pager);
-            viewPager.setAdapter(new ListFragmentsPagerAdapter(getSupportFragmentManager(),
-                    new Fragment[]{
-                            new CharacterListFragment(),
-                            new GuildListFragment()
-                    }));
-
-            // Bottom navigation setup
-            BottomNavigationView navigationView = findViewById(R.id.navigation);
-
-            // Link View pager and Bottom navigation
-            Map<Integer, Integer> links = new HashMap<>();
-
-            links.put(CHARACTER_FRAGMENT_INDEX, R.id.navigation_character);
-            links.put(GUILD_FRAGMENT_INDEX, R.id.navigation_guild);
-
-            PageNavigationLinker linker = new PageNavigationLinker(viewPager, navigationView, links);
-
-            // Floating button setup
-            FloatingActionButton fab = findViewById(R.id.buttonAdd);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), AddActivity.class);
-
-                    intent.setAction(viewPager.getCurrentItem() == CHARACTER_FRAGMENT_INDEX
-                            ? ActivityContract.ACTION_ADD_CHARACTER
-                            : ActivityContract.ACTION_ADD_GUILD);
-
-                    startActivity(intent);
-
-                }
-            });
-
-            // Ad View setup
-            // Create a banner ad. The ad size and ad unit ID must be set before calling loadAd.
-            mAdView = findViewById(R.id.adView);
-
-            // Start loading the ad.
-            mAdView.loadAd(AdMobManager.getAdRequest());
+            else initActivity();
         }
     }
 
@@ -88,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (!Authenticator.isUserAuthenticated()) {
             Authenticator.startAuthenticationUI(this);
+        } else {
+            initActivity();
         }
 
     }
@@ -108,6 +67,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (mAdView != null) mAdView.resume();
+    }
+
+    private void initActivity() {
+        setContentView(R.layout.activity_main);
+
+        // View pager setup
+        final ViewPager viewPager = findViewById(R.id.pager);
+        viewPager.setAdapter(new ListFragmentsPagerAdapter(getSupportFragmentManager(),
+                new Fragment[]{
+                        new CharacterListFragment(),
+                        new GuildListFragment()
+                }));
+
+        // Bottom navigation setup
+        BottomNavigationView navigationView = findViewById(R.id.navigation);
+
+        // Link View pager and Bottom navigation
+        Map<Integer, Integer> links = new HashMap<>();
+
+        links.put(CHARACTER_FRAGMENT_INDEX, R.id.navigation_character);
+        links.put(GUILD_FRAGMENT_INDEX, R.id.navigation_guild);
+
+        PageNavigationLinker linker = new PageNavigationLinker(viewPager, navigationView, links);
+
+        // Floating button setup
+        FloatingActionButton fab = findViewById(R.id.buttonAdd);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AddActivity.class);
+
+                intent.setAction(viewPager.getCurrentItem() == CHARACTER_FRAGMENT_INDEX
+                        ? ActivityContract.ACTION_ADD_CHARACTER
+                        : ActivityContract.ACTION_ADD_GUILD);
+
+                startActivity(intent);
+
+            }
+        });
+
+        // Ad View setup
+        // Create a banner ad. The ad size and ad unit ID must be set before calling loadAd.
+        mAdView = findViewById(R.id.adView);
+
+        // Start loading the ad.
+        mAdView.loadAd(AdMobManager.getAdRequest());
     }
 
 }

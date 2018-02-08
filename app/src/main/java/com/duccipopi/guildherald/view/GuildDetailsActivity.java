@@ -28,7 +28,6 @@ public class GuildDetailsActivity extends AppCompatActivity {
 
     HeraldDAO api;
 
-    // TODO: Add progress view
     public GuildDetailsActivity() {
         super();
         api = new HeraldDAO(this);
@@ -66,11 +65,6 @@ public class GuildDetailsActivity extends AppCompatActivity {
     HeraldCallback<Guild> callback = new HeraldCallback<Guild>() {
         @Override
         public void onResponse(Guild guild) {
-
-           /* GuildDetailsViewHolder viewHolder =
-                    new CharacterDetailsViewHolder(findViewById(android.R.id.content));
-
-            viewHolder.bind(guild);*/
 
             ImageView emblem;
             TextView achievements;

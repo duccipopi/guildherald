@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_light_background"
+    android:layout_margin="@dimen/layout_inner_margin">
+
+    <ImageView
+        android:id="@+id/portrait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/layout_inner_margin"
+        android:scaleType="fitXY"
+        android:src="@drawable/default_portrait" />
+
+    <TextView
+        android:id="@+id/char_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/portrait"
+        android:layout_toEndOf="@id/portrait"
+        android:textAppearance="@style/AppTheme.Text.Title"
+        tool:text="CharacterName" />
+
+    <TextView
+        android:id="@+id/realm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/char_name"
+        android:layout_toEndOf="@id/portrait"
+        android:textAppearance="@style/AppTheme.Text.Subtitle"
+        tool:text="Realm Name" />
+
+    <TextView
+        android:id="@+id/race"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/realm"
+        android:layout_toEndOf="@id/portrait"
+        android:paddingEnd="@dimen/padding_between_text"
+        android:textAppearance="@style/AppTheme.Text.Caption"
+        tool:text="Race" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/race"
+        android:layout_toEndOf="@id/race"
+        android:paddingEnd="@dimen/padding_between_text"
+        android:textAppearance="@style/AppTheme.Text.Caption"
+        tool:text="Gender" />
+
+    <TextView
+        android:id="@+id/char_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/gender"
+        android:layout_toEndOf="@id/gender"
+        android:paddingEnd="@dimen/padding_between_text"
+        android:textAppearance="@style/AppTheme.Text.Caption"
+        tool:text="Class" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/char_class"
+        android:layout_toEndOf="@id/char_class"
+        android:textAppearance="@style/AppTheme.Text.Caption"
+        tool:text="Level" />
+
+</RelativeLayout>

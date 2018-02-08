@@ -22,7 +22,6 @@ public class CharacterDetailsActivity extends AppCompatActivity {
 
     HeraldDAO api;
 
-    // TODO: Add progress view
     public CharacterDetailsActivity() {
         super();
         api = new HeraldDAO(this);

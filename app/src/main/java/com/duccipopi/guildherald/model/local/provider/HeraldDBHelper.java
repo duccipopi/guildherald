@@ -19,6 +19,7 @@ public class HeraldDBHelper extends SQLiteOpenHelper {
             HeraldProviderContract.CharacterEntry.COLUMN_NAME + " TEXT NOT NULL, " +
             HeraldProviderContract.CharacterEntry.COLUMN_REALM + " TEXT NOT NULL, " +
             HeraldProviderContract.CharacterEntry.COLUMN_CLASS + " INTEGER NOT NULL, " +
+            HeraldProviderContract.CharacterEntry.COLUMN_RACE + " INTEGER NOT NULL, " +
             HeraldProviderContract.CharacterEntry.COLUMN_GENDER + " INTEGER NOT NULL, " +
             HeraldProviderContract.CharacterEntry.COLUMN_LEVEL + " INTEGER NOT NULL, " +
             HeraldProviderContract.CharacterEntry.COLUMN_FACTION + " INTEGER NOT NULL, " +
