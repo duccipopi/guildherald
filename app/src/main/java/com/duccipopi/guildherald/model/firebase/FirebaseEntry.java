@@ -1,7 +1,5 @@
 package com.duccipopi.guildherald.model.firebase;
 
-import android.util.Pair;
-
 /**
  * Created by ducci on 03/02/2018.
  */

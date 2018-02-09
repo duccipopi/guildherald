@@ -81,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
                 android:elevation="12dp"
-                android:src="@drawable/fab_flat_check" />
+                android:src="@drawable/fab_flat_check"
+                android:contentDescription="@string/ac_add" />
 
         </FrameLayout>
 

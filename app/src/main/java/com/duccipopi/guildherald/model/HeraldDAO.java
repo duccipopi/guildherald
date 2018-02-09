@@ -10,10 +10,6 @@ import com.duccipopi.guildherald.model.base.IServiceDAO;
 import com.duccipopi.guildherald.model.local.LocalDAO;
 import com.duccipopi.guildherald.model.remote.RemoteDAO;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * Created by ducci on 28/01/2018.
  */
@@ -64,7 +60,6 @@ public class HeraldDAO implements IServiceDAO {
         SAVEINFORMATION
     }
 
-    ;
 
     private class InterceptorCallback extends HeraldCallback {
 
@@ -115,6 +110,5 @@ public class HeraldDAO implements IServiceDAO {
         }
     }
 
-    ;
 
 }

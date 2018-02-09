@@ -137,4 +137,23 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
+    <string name="ac_add">Add</string>
+    <string name="ac_char_portrait">Character portrait</string>
+    <string name="ac_guild_emblem">Guild emblem</string>
+    <string name="ac_achievements">Achievements</string>
+    <string name="health">Health</string>
+    <string name="achievements">Achievements</string>
+    <string name="honorable_kills">Honorable kills</string>
+    <string name="strength">Strength</string>
+    <string name="agility">Agility</string>
+    <string name="intellect">Intellect</string>
+    <string name="stamina">Stamina</string>
+    <string name="critical">Critical</string>
+    <string name="haste">Haste</string>
+    <string name="mastery">Mastery</string>
+    <string name="versatility">Versatility</string>
+    <string name="armor">Armor</string>
+    <string name="dodge">Dodge</string>
+    <string name="parry">Parry</string>
+    <string name="block">Block</string>
 </resources>

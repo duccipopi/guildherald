@@ -11,7 +11,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AppTheme.Text.Subtitle" parent="Base.TextAppearance.AppCompat.Subhead"></style>
+    <style name="AppTheme.Text.Subtitle" parent="Base.TextAppearance.AppCompat.Subhead" />
 
     <style name="AppTheme.Text.Caption" parent="Base.TextAppearance.AppCompat.Caption">
         <item name="android:textStyle">italic</item>

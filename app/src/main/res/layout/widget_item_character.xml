@@ -9,10 +9,14 @@
     <ImageView
         android:id="@+id/portrait"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingEnd="@dimen/layout_inner_margin"
-        android:scaleType="fitXY"
-        android:src="@drawable/default_portrait" />
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/default_portrait"
+        android:contentDescription="@string/ac_char_portrait" />
 
     <TextView
         android:id="@+id/char_name"

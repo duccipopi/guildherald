@@ -3,13 +3,11 @@ package com.duccipopi.guildherald.presenter;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.presenter.base.GenericViewHolder;
 import com.duccipopi.guildherald.util.Utilities;
-import com.duccipopi.guildherald.view.CharacterDetailsActivity;
 
 /**
  * Created by ducci on 04/02/2018.

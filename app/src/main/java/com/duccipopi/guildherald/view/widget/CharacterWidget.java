@@ -5,9 +5,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.widget.RemoteViews;
 
 import com.duccipopi.guildherald.R;
@@ -17,8 +15,6 @@ import com.duccipopi.guildherald.model.local.LocalDAO;
 import com.duccipopi.guildherald.util.Utilities;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
-
-import java.util.concurrent.CountDownLatch;
 
 /**
  * Implementation of App Widget functionality.
@@ -58,7 +54,7 @@ public class CharacterWidget extends AppWidgetProvider {
             editor.putString(WIDGET_PREFIX_NAME + appWidgetId, character.getName());
             editor.putString(WIDGET_PREFIX_REALM + appWidgetId, character.getRealm());
 
-            editor.commit();
+            editor.apply();
 
             callback.onResponse(character);
         }
@@ -96,6 +92,8 @@ public class CharacterWidget extends AppWidgetProvider {
 
                         @Override
                         public void onBitmapFailed(Drawable errorDrawable) {
+                            remoteViews.setImageViewResource(R.id.portrait, R.drawable.error_portrait);
+                            appWidgetManager.updateAppWidget(widgetId, remoteViews);
                         }
 
                         @Override
@@ -103,7 +101,7 @@ public class CharacterWidget extends AppWidgetProvider {
 
                         }
                     });
-            remoteViews.setImageViewUri(R.id.portrait, Uri.parse(Utilities.Blizzard.getThumbnailFullURL(character.getThumbnail())));
+
             remoteViews.setTextViewText(R.id.char_name, character.getName());
             remoteViews.setTextViewText(R.id.realm, character.getRealm());
             remoteViews.setTextViewText(R.id.race, context.getString(Utilities.Blizzard.getRaceResId(character.getRace())));
@@ -134,6 +132,13 @@ public class CharacterWidget extends AppWidgetProvider {
     public void onDeleted(Context context, int[] appWidgetIds) {
         // When the user deletes the widget, delete the preference associated with it.
         for (int appWidgetId : appWidgetIds) {
+            // Save base info for query
+            SharedPreferences sharedPreferences = context.getSharedPreferences(SP_WIDGET, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.remove(WIDGET_PREFIX_NAME + appWidgetId);
+            editor.remove(WIDGET_PREFIX_REALM + appWidgetId);
+
+            editor.apply();
         }
     }
 

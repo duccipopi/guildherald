@@ -2,7 +2,6 @@ package com.duccipopi.guildherald.model.local.task;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 

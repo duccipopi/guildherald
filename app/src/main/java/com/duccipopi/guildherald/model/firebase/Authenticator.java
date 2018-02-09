@@ -1,7 +1,6 @@
 package com.duccipopi.guildherald.model.firebase;
 
 import android.app.Activity;
-import android.content.Context;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;

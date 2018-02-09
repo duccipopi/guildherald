@@ -2,21 +2,16 @@ package com.duccipopi.guildherald.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.model.HeraldDAO;
 import com.duccipopi.guildherald.model.base.HeraldCallback;
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.presenter.CharacterDetailsViewHolder;
-import com.duccipopi.guildherald.util.Utilities;
 
 public class CharacterDetailsActivity extends AppCompatActivity {
 

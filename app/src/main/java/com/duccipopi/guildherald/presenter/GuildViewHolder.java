@@ -1,6 +1,5 @@
 package com.duccipopi.guildherald.presenter;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;

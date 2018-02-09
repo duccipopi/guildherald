@@ -1,6 +1,5 @@
 package com.duccipopi.guildherald.model.remote.blizzard;
 
-import com.duccipopi.guildherald.BuildConfig;
 import com.duccipopi.guildherald.model.dao.Character;
 import com.duccipopi.guildherald.model.dao.Guild;
 
