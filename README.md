@@ -1,8 +1,10 @@
 # Udacity final project (Capstone) #
 
-### Signed APK & key: ### /release
+### Signed APK & key ###
+    /release
 
-### Key pwd: ### udacity
+### Key pwd ###
+    udacity
 
 ### Character and Guilds: ###
     * https://worldofwarcraft.com/en-us/search?q=Thugal
