@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import com.duccipopi.guildherald.R;
 import com.duccipopi.guildherald.model.dao.Emblem;
 import com.duccipopi.guildherald.model.dao.Guild;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -34,6 +36,20 @@ public final class Utilities {
                 imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
             }
 
+        }
+    }
+
+    public static final class Google {
+        public static boolean isGooglePlayServicesAvailable(Activity activity) {
+            GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
+            int status = googleApiAvailability.isGooglePlayServicesAvailable(activity);
+            if(status != ConnectionResult.SUCCESS) {
+                if(googleApiAvailability.isUserResolvableError(status)) {
+                    googleApiAvailability.getErrorDialog(activity, status, 2404).show();
+                }
+                return false;
+            }
+            return true;
         }
     }
 

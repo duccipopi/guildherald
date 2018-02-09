@@ -65,7 +65,7 @@ public class CharacterDetailsActivity extends AppCompatActivity {
         @Override
         public void onFailure(Character character) {
             Snackbar.make(findViewById(android.R.id.content),
-                    "Error loading character details", Snackbar.LENGTH_LONG).show();
+                    R.string.error_loading_char, Snackbar.LENGTH_LONG).show();
         }
     };
 }

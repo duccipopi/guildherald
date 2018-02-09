@@ -103,7 +103,7 @@ public class AddActivity extends AppCompatActivity {
                 if (editName == null || editRealm == null
                         || TextUtils.isEmpty(editName.getText())
                         || TextUtils.isEmpty(editRealm.getText())) {
-                    Snackbar.make(view, "Please, fill all fields", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(view, R.string.error_fill_all_fields, Snackbar.LENGTH_LONG).show();
                 } else {
 
                     progressBar.setVisibility(View.VISIBLE);
@@ -142,7 +142,7 @@ public class AddActivity extends AppCompatActivity {
         @Override
         public void onFailure(Character character) {
             progressBar.setVisibility(View.GONE);
-            Snackbar.make(resultView, "Error loading character", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(resultView, R.string.error_loading_char, Snackbar.LENGTH_LONG).show();
 
             currentResult = null;
         }
@@ -162,7 +162,7 @@ public class AddActivity extends AppCompatActivity {
         @Override
         public void onFailure(Guild guild) {
             progressBar.setVisibility(View.GONE);
-            Snackbar.make(resultView, "Error loading guild", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(resultView, R.string.error_loading_guild, Snackbar.LENGTH_LONG).show();
 
             currentResult = null;
         }

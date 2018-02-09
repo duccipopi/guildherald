@@ -98,7 +98,7 @@ public class GuildDetailsActivity extends AppCompatActivity {
         @Override
         public void onFailure(Guild Guild) {
             Snackbar.make(findViewById(android.R.id.content),
-                    "Error loading guild details", Snackbar.LENGTH_LONG).show();
+                    R.string.error_loading_guild_details, Snackbar.LENGTH_LONG).show();
         }
     };
 

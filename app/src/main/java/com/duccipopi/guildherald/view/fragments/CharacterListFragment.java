@@ -68,7 +68,7 @@ public class CharacterListFragment extends Fragment {
 
         @Override
         public void onFailure(Character character) {
-            Snackbar.make(getView(), "Error loading character", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(getView(), R.string.error_loading_char, Snackbar.LENGTH_LONG).show();
         }
     };
 

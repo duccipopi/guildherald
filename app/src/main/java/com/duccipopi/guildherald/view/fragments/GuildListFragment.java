@@ -70,7 +70,7 @@ public class GuildListFragment extends Fragment {
 
         @Override
         public void onFailure(Guild guild) {
-            Snackbar.make(getView(), "Error loading guild", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(getView(), R.string.error_loading_guild, Snackbar.LENGTH_LONG).show();
         }
     };
 

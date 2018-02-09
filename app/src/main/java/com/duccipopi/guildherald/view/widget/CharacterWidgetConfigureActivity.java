@@ -124,7 +124,7 @@ public class CharacterWidgetConfigureActivity extends AppCompatActivity {
 
         @Override
         public void onFailure(Character character) {
-            Snackbar.make(getCurrentFocus(), "Error loading character", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(getCurrentFocus(), R.string.error_loading_char, Snackbar.LENGTH_LONG).show();
         }
     };
 

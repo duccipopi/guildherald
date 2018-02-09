@@ -2,6 +2,7 @@ package com.duccipopi.guildherald.model.firebase;
 
 import android.app.Activity;
 
+import com.duccipopi.guildherald.util.Utilities;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -21,13 +22,18 @@ public class Authenticator {
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build());
 
-        // Create and launch sign-in intent
-        context.startActivityForResult(
-                AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
-                        .build(),
-                REQUEST_SIGNING);
+        if (Utilities.Google.isGooglePlayServicesAvailable(context)) {
+
+            // Create and launch sign-in intent
+            context.startActivityForResult(
+                    AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(providers)
+                            .build(),
+                    REQUEST_SIGNING);
+        } else {
+            context.finish();
+        }
     }
 
     public static boolean isUserAuthenticated() {
